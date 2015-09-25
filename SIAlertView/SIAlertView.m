@@ -286,6 +286,11 @@ static SIAlertView *__si_alert_current_view;
     return self;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - Class methods
 
 + (NSMutableArray *)sharedQueue
